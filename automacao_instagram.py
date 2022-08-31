@@ -13,7 +13,7 @@ import time
 
 
 class bot():
-    def __init__(Self, browser, username, passwrd) -> None:
+    def __init__(Self, browser, username, passwrd):
         Self.browser = webdriver.Chrome(executable_path=r'C:\Users\mayco\chromedriver_win32\chromedriver.exe')
         Self.username = username
         Self.passwrd = passwrd
@@ -21,8 +21,8 @@ class bot():
 
     def login(Self):
         Self.browser.get('https://www.instagram.com/')
-        usernameInput = Self.browser.find_element(By.XPATH, '')
-        password = Self.browser.find_element(By.XPATH, '')
+        usernameInput = Self.browser.find_element(By.XPATH, "//input[contains(@name , 'username')]" )
+        password = Self.browser.find_element(By.XPATH, "//input[contains(@name , 'senha')]")
 
         usernameInput.send_keys(Self.username)
         password.send_keys(Self.passwrd)
